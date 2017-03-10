@@ -24,7 +24,7 @@ window.onload = function() {
 							let tr = document.createElement('tr');
 							let usersArray = [user.name, user.gender, user.company, user.age, user.email]
 						
-									for (let a = 0; a < 5; a++){ 
+									for (let a = 0; a < usersArray.length; a++){ 
 										  let td = document.createElement('td');
 										  td.innerHTML = usersArray[a];
 										  if (usersArray[a] == user.gender){td.classList.add("genderCompanyAge");}
@@ -32,7 +32,9 @@ window.onload = function() {
 										  if (usersArray[a] == user.age){td.classList.add("genderCompanyAge");}
 										  tr.appendChild(td);
 									}
-													
+									
+									}
+																
 							tbody.appendChild(tr);
 					});
 			  }			
