@@ -42,16 +42,16 @@ window.onload = function() {
 		
 	function throwBones(){
 		
-		let min = 1, max = 6;
-		let bonesExit = document.getElementById("bonesExit");
-					
-					(function randomDice(min, max) {
-						  let rand = min + Math.random() * (max + 1 - min);
-						  rand = Math.floor(rand);
-
-						  let rand2 = min + Math.random() * (max + 1 - min);
-						  rand2 = Math.floor(rand2);
-						  
-						  bonesExit.innerHTML = "Выпали цифры " + rand + " и " + rand2;
-					})(min, max);
+				let min = 1, max = 6;
+				let bonesExit = document.getElementById("bonesExit");
+				randomDice(min, max);
 	}	
+	function randomDice(min, max) {
+				let rand = Math.floor(min + Math.random() * (max + 1 - min));
+				let rand2 = Math.floor(min + Math.random() * (max + 1 - min));
+									
+				rendertThrowBonesResult(rand, rand2); 	  
+	}
+	function rendertThrowBonesResult(a, b){
+				bonesExit.innerHTML = "Выпали цифры " + a + " и " + b;
+	}
