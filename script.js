@@ -22,31 +22,17 @@ window.onload = function() {
 					users.forEach((user) => {
 						console.log(user.name);
 							let tr = document.createElement('tr');
+							let usersArray = [user.name, user.gender, user.company, user.age, user.email]
 						
-								let td1 = document.createElement('td');
-								td1.innerHTML = user.name;
-								tr.appendChild(td1);
-								
-								let td2 = document.createElement('td');
-								td2.innerHTML = user.gender;
-								td2.classList.add("genderCompanyAge");
-								tr.appendChild(td2);
-								
-								let td3 = document.createElement('td');
-								td3.innerHTML = user.company;
-								td3.classList.add("genderCompanyAge");
-								tr.appendChild(td3);
-								
-								let td4 = document.createElement('td');
-								td4.innerHTML = user.age;
-								td4.classList.add("genderCompanyAge");
-								tr.appendChild(td4);
-								
-								let td5 = document.createElement('td');
-								td5.innerHTML = user.email;
-								td5.classList.add("mail");
-								tr.appendChild(td5);
-												
+									for (let a = 0; a < 5; a++){ 
+										  let td = document.createElement('td');
+										  td.innerHTML = usersArray[a];
+										  if (usersArray[a] == user.gender){td.classList.add("genderCompanyAge");}
+										  if (usersArray[a] == user.company){td.classList.add("genderCompanyAge");}
+										  if (usersArray[a] == user.age){td.classList.add("genderCompanyAge");}
+										  tr.appendChild(td);
+									}
+													
 							tbody.appendChild(tr);
 					});
 			  }			
