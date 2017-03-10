@@ -1,0 +1,20 @@
+.table{
+	min-width: 500px;
+	min-height: 200px;
+	
+}
+body{
+	background-color: #F0FFF0;
+}
+th,td{
+	border: 2px solid #B0E0E6;
+	padding: 5px;
+	min-width: 120px;
+
+}
+.genderCompanyAge{
+	text-align: center;
+}
+.mail{
+	min-width: 220px;
+}
