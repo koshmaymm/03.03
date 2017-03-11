@@ -39,8 +39,7 @@ window.onload = function() {
 						});
 			  }			
 			}							
-	}	
-				
+	}				
 	function throwBones(){
 				let min = 1, max = 6;
 				let bonesExit = document.getElementById("bonesExit");
@@ -58,20 +57,14 @@ window.onload = function() {
 	function showBonesStatistics(){
 				let statisticsArray = [2,3,4,5,6,7,8,9,10,11,12];
 				let resArray = [0,0,0,0,0,0,0,0,0,0,0];
-				
-				
-				//console.log(statisticsArray);
-				//console.log(resArray);
-				numberStartsStatistics(1,6,450);
+				getNumber();
 	
 	
 			function numberStartsStatistics(a,b,c){
 						for (let i = 0; i < c; i++) {
 						  randomStatistics(a,b);
-						}
-					console.log(resArray);
-					
-					showStatistics();
+						}				
+				showStatistics();
 			}
 			
 			function randomStatistics(min, max) {
@@ -86,7 +79,7 @@ window.onload = function() {
 			}
 			
 			function showStatistics(){
-				
+								
 				let li = document.createElement("li");
 				li.innerHTML = "Статистика выпадания цифр: ";
 				list.appendChild(li);
@@ -95,6 +88,16 @@ window.onload = function() {
 					let li = document.createElement("li");
 					li.innerHTML = statisticsArray[i] + " Выпадало " + resArray[i] + " раз ";
 					list.appendChild(li);				  
+				}
+			}
+			function getNumber(){
+				let a = document.getElementById("idNumberCast").value;
+				if (+a === 0){
+					let li = document.createElement("li");
+					li.innerHTML = "Вы не выбрали количество бросков ";
+					list.appendChild(li);
+				} else {
+					numberStartsStatistics(1,6,a);
 				}
 			}
 	}
