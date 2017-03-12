@@ -81,7 +81,8 @@ window.onload = function() {
 			function showStatistics(){
 								
 				let li = document.createElement("li");
-				li.innerHTML = "Статистика выпадания цифр: ";
+				let a = document.getElementById("idNumberCast").value;
+				li.innerHTML = "Статистика выпадания цифр за " + a + " бросков" ;
 				list.appendChild(li);
 				
 				for (let i = 0; i < statisticsArray.length; i++) {
@@ -92,12 +93,8 @@ window.onload = function() {
 			}
 			function getNumber(){
 				let a = document.getElementById("idNumberCast").value;
-				if (+a === 0){
-					let li = document.createElement("li");
-					li.innerHTML = "Вы не выбрали количество бросков ";
-					list.appendChild(li);
-				} else {
+				
 					numberStartsStatistics(1,6,a);
-				}
+				
 			}
 	}
