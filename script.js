@@ -5,6 +5,8 @@ window.onload = function() {
 		buttonBones.addEventListener("click", throwBones, false);
 		let bonesStatistics = document.getElementById("bonesStatistics");
 		bonesStatistics.addEventListener("click", showBonesStatistics, false);
+		let buttonPassword = document.getElementById("buttonPassword");
+		buttonPassword.addEventListener("click", newPassword, false);
 		
 };
   
@@ -97,4 +99,34 @@ window.onload = function() {
 					numberStartsStatistics(1,6,a);
 				
 			}
+	
+	
+		
+	}
+	
+	
+	function newPassword(){
+					
+					let result = '';
+					let words = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+					let max_position = words.length - 1;
+					let b = getPasswordLength();
+						for( let i = 0; i < b; ++i ) {
+							position = Math.floor ( Math.random() * max_position );
+							result = result + words.substring(position, position + 1);
+						}
+					generatNewPass(result);
+					
+	}
+	
+	function getPasswordLength(){
+					let a = document.getElementById("inputPassword").value;
+					return a;
+	}
+	
+	function generatNewPass(pass){
+		let ex = document.getElementById("listPassword");
+		let p = document.createElement("p");
+		p.innerHTML ="Ваш новый пароль: " + pass;
+		ex.appendChild(p);
 	}
