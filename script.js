@@ -22,7 +22,7 @@ window.onload = function () {
                 let tableBody = document.getElementById("tableId");
                 users.forEach((user) => {
                     let tr = document.createElement('tr');
-                    let usersArray = [user.name, user.gender, user.company, user.age, user.email]
+                    let usersArray = [user.name, user.gender, user.company, user.age, user.email, user.tags]
 
                     for (let a = 0; a < usersArray.length; a++) {
                         let td = document.createElement('td');
