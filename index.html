@@ -1,66 +1,88 @@
 <!DOCTYPE html>
-	<html>
+	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>!!!</title>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
 		<link href="style.css" rel="stylesheet">
 		
 	</head>
 		<body>
-		<div class="container-fluid">	
-			<input type="button" id="but" value="Получить данные"/>
-			<table  class="table table-hover">
-			<caption>TABLE for data from JSON</caption>
+		<div class="container-fluid">
+				<div class="row">
+				<div class="col-md-1"></div>
+						<div class="col-md-10">
+							<input type="button" id="but" class="btn btn-warning" value="Получить данные"/>
+							<div class="row">
+							<table  class="table table-bordered table-striped table-hover">
+							<caption>TABLE for data from JSON</caption>
+							
+								<thead>
+									<tr>
+										<th class="col-md-2">Name</th>
+										<th class="col-md-1">Gender</th>
+										<th class="col-md-2">Company</th>
+										<th class="col-md-1">Age</th>
+										<th class="mail col-md-3">E-mail</th>
+										<th class="mail col-md-3">Tags</th>
+									</tr>
+								</thead>
+								
+								<tbody id="tableId">
+								</tbody>
+							</table>
+							</div>
+						</div>
+				<div class="col-md-1"></div>
+				</div>
 			
-				<thead>
-					<tr>
-						<th>Name</th><th>Gender</th><th>Company</th><th>Age</th><th class="mail">E-mail</th><th class="mail">Tags</th>
-					</tr>
-				</thead>
-				
-				<tbody id="tableId">
-				</tbody>
-			</table>
-			<br />
-			<input type="button" id="bones" value="Бросить кости"/>
-			<div id="bonesExit"></div>
-			<br /><br />
-			<form action="script.js">
-				<p>Выберите количество бросков</p>
-				<p><input id="idNumberCast" type="number" step="200" value="3000" name="num" min="1000" max="5000">
-				<input type="button" id="bonesStatistics" value="Бросить кости"/>
-				</p>
-					<ul id="list">
-						   
-					</ul>
-			</form>
-			
-			<form action="script.js">
-				<p>Выберите количество символов для генерации пароля</p>
-				<p><input id="inputPassword" type="number" value="10" name="inputPassword" min="10" max="25">
-				<input type="button" id="buttonPassword" value="Сгенерировать пароль"/>
-				</p>
-					<ul id="listPassword">
-						   
-					</ul>
-			</form>
+			<div class="row">
+			<div class="col-md-1"></div>
+				<div class="col-md-10">
+				<div class="input-group">
+				<input type="button" id="bones" class="btn btn-default btn-lg" value="Бросить кости"/>
+				<div id="bonesExit"></div>
+				<br /><br />
+				<form class="form-inline" action="script.js">
+					<p>Выберите количество бросков
+					<input id="idNumberCast" class="form-control" type="number" step="200" value="3000" name="num" min="1000" max="5000">
+					<input type="button" id="bonesStatistics" class="btn btn-info" value="Бросить кости"/>
+					</p>
+						<ul id="list">
+							   
+						</ul>
+				</form>
+				</div>
+				</div>
+			<div class="col-md-1"></div>
+			</div>
+			<div class="row">
+			<div class="col-md-1"></div>
+				<div class="col-md-10">
+				<form class="form-inline" action="script.js">
+					<p>Выберите количество символов для генерации пароля
+					<input id="inputPassword" class="form-control" type="number" value="10" name="inputPassword" min="10" max="25">
+					<input type="button" id="buttonPassword" class="btn btn-success btn-lg" value="Сгенерировать пароль"/>
+					</p>
+						<ul id="listPassword">
+							   
+						</ul>
+				</form>
+				</div>
+			<div class="col-md-1"></div>	
 			</div>	
+		</div>	
 			
 					<script src="script.js"></script>
 			
 					<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-					<!-- Include all compiled plugins (below), or include individual files as needed -->
-					<script src="js/bootstrap.min.js"></script>			
+								
 		</body>
 	</html>
