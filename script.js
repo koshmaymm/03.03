@@ -8,6 +8,8 @@ window.onload = function () {
     bonesStatistics.addEventListener("click", showBonesStatistics, false);
     let buttonPassword = document.getElementById("buttonPassword");
     buttonPassword.addEventListener("click", newPassword, false);
+	let delU = document.getElementsByClassName("bdu");
+    delU.addEventListener("click", delUser, false);
 
     function showData() {
         var data = new XMLHttpRequest();
@@ -32,14 +34,40 @@ window.onload = function () {
                         }
                         tr.appendChild(td);
                     }
-
-                    tableBody.appendChild(tr);
-
+						let tdBtn = document.createElement('td');
+						let btn = document.createElement('button');
+						btn.setAttribute('value', 'GGG');
+						btn.classList.add("btn");
+						btn.classList.add("btn-danger");
+						btn.classList.add("bdu");
+						btn.innerHTML = "Удалить<br />данного<br />юзера ?"
+										
+						tdBtn.appendChild(btn);
+						tr.appendChild(tdBtn);
+                    
+					
+					tableBody.appendChild(tr);
+					
                 });
+				console.log(typeof(tableBody));
             }
         }
     }
 
+	function delUser(){
+		console.log("RRR");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     let min = 1, max = 6;
     let statisticsArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     let resArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
