@@ -9,7 +9,7 @@ window.onload = function () {
     let buttonPassword = document.getElementById("buttonPassword");
     buttonPassword.addEventListener("click", newPassword, false);
 	let delU = document.getElementsByClassName("bdu");
-    delU.addEventListener("click", delUser, false);
+    
 
     function showData() {
         var data = new XMLHttpRequest();
@@ -36,12 +36,15 @@ window.onload = function () {
                     }
 						let tdBtn = document.createElement('td');
 						let btn = document.createElement('button');
-						btn.setAttribute('value', 'GGG');
 						btn.classList.add("btn");
 						btn.classList.add("btn-danger");
 						btn.classList.add("bdu");
 						btn.innerHTML = "Удалить<br />данного<br />юзера ?"
-										
+					
+								for (let i = 0; i < delU.length; i++) {
+									delU[i].addEventListener('click', delUser, false);
+								}
+						
 						tdBtn.appendChild(btn);
 						tr.appendChild(tdBtn);
                     
@@ -54,11 +57,11 @@ window.onload = function () {
         }
     }
 
-	function delUser(){
-		console.log("RRR");
+		
+	function delUser(event){
+        event.target.parentElement.parentElement.remove();
+		console.log("J")
 	}
-	
-	
 	
 	
 	
