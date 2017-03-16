@@ -60,7 +60,7 @@ window.onload = function () {
 		
 	function delUser(event){
         event.target.parentElement.parentElement.remove();
-		console.log("J")
+		console.log(delU);
 	}
 	
 	
